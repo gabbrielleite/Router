@@ -1,20 +1,20 @@
-
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
-import Home from './pages/Home'
-import Links from './pages/Links'
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
 
+import Home from './components/Home';
+import Links from './components/Links';
 
-function RoutesApp() {
+export default function RoutesApp() {
   return (
     <BrowserRouter>
-     
-        <Route exact={true} path="/" component={Home} />
-        <Route path="/links" component={Links} />
-      
+      <Routes>        
+        <Route exact path="/" element={<Home />} />
+        <Route path="/links" element={<Links />} />
+      </Routes>
     </BrowserRouter>
   );
 }
-export default RoutesApp;
-
-
